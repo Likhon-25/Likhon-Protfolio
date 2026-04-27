@@ -193,18 +193,18 @@ export default function Hero() {
           margin: 0 auto;
           width: 100%;
           display: grid;
-          grid-template-columns: 1fr; /* মোবাইল এ এক কলাম */
+          grid-template-columns: 1fr; 
           gap: 3rem;
           align-items: center;
-          text-align: center; /* মোবাইল এ টেক্সট সেন্টারে */
+          text-align: center; 
         }
 
         @media (min-width: 1024px) {
           .container-hero {
-            grid-template-columns: 1.2fr 0.8fr; /* ল্যাপটপে কন্টেন্ট ডানে ছবি */
+            grid-template-columns: 1.2fr 0.8fr; 
             text-align: left;
           }
-          .avatar-container { order: 2; } /* ছবি ডানে যাবে */
+          .avatar-container { order: 2; } 
           .hero-content { order: 1; }
         }
 
@@ -228,7 +228,7 @@ export default function Hero() {
           position: absolute;
           inset: 6px;
           border-radius: 50%;
-          background: #0f172a; /* আপনার ওয়েবসাইটের ব্যাকগ্রাউন্ড কালার দিন */
+          background: #0f172a; /*website bacnground color*/
           z-index: 0;
         }
 
