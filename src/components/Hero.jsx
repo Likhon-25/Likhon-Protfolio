@@ -70,46 +70,18 @@ export default function Hero() {
   }, []);
 
   return (
-    <section
-      id="hero"
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        padding: "clamp(1.25rem, 5vw, 4rem)",
-        paddingTop: 100,
-        overflow: "hidden",
-      }}
-    >
-      <div className="container-hero">
-        {/* Avatar - Mobile এ উপরে দেখাবে, বড় স্ক্রিনে ডানে */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.35 }}
-          className="avatar-container"
-        >
-          <div className="spinning-ring">
-            <div className="ring-inner-bg" />
-            <div className="image-wrapper">
-              <img src={protfolioImage} alt="Likhon Mondol" />
-            </div>
-          </div>
-
-          <div className="float-badge top">⚡ MERN Stack Dev</div>
-          <div className="float-badge bottom">🚀 3+ Projects Built</div>
-        </motion.div>
-
-        {/* Content */}
-        <div className="hero-content">
+    <section id="hero" className="hero-section">
+      <div className="hero-container">
+        {/* Content Section */}
+        <div className="hero-content-area">
           <motion.div
             variants={fadeUp}
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.5, delay: 0 }}
-            className="badge"
+            className="hero-badge"
           >
-            <span className="dot" />
+            <span className="pulse-dot-icon" />
             Available for opportunities
           </motion.div>
 
@@ -118,7 +90,7 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="hero-title"
+            className="hero-main-title"
           >
             Hi, I'm
             <br />
@@ -130,11 +102,11 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="typewriter-container"
+            className="hero-typewriter"
           >
             <span>I build </span>
             <span ref={typeRef} style={{ color: "#38bdf8" }} />
-            <span className="cursor" />
+            <span className="type-cursor" />
           </motion.div>
 
           <motion.p
@@ -142,11 +114,10 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="hero-desc"
+            className="hero-para"
           >
-            A passionate MERN Stack developer who crafts scalable,
-            high-performance web applications — blending clean backend
-            architecture with elegant, user-first interfaces.
+            A passionate MERN Stack developer who crafts web applications
+            blending clean backend architecture with elegant interfaces.
           </motion.p>
 
           <motion.div
@@ -154,12 +125,12 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.5, delay: 0.25 }}
-            className="cta-group"
+            className="hero-btns"
           >
-            <a href="#projects" className="btn-primary">
+            <a href="#projects" className="hero-btn-primary">
               View Projects →
             </a>
-            <a href="#contact" className="btn-secondary">
+            <a href="#contact" className="hero-btn-secondary">
               Get In Touch
             </a>
           </motion.div>
@@ -169,7 +140,7 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="social-group"
+            className="hero-social-group"
           >
             {socials.map((s) => (
               <a
@@ -178,133 +149,143 @@ export default function Hero() {
                 target="_blank"
                 rel="noreferrer"
                 title={s.label}
-                className="social-link"
+                className="hero-social-link"
               >
                 {s.icon}
               </a>
             ))}
           </motion.div>
         </div>
+
+        {/* Avatar Section */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.35 }}
+          className="hero-image-area"
+        >
+          <div className="avatar-frame">
+            <div className="avatar-inner-bg" />
+            <div className="avatar-img-box">
+              <img src={protfolioImage} alt="Portfolio" />
+            </div>
+          </div>
+
+          <div className="hero-badge-float badge-top">⚡ MERN Stack</div>
+          <div className="hero-badge-float badge-bottom">🚀 3+ Projects</div>
+        </motion.div>
       </div>
 
       <style>{`
-        .container-hero {
+        .hero-section {
+          min-height: 100vh;
+          display: flex;
+          align-items: center;
+          padding: clamp(1.25rem, 5vw, 4rem);
+          padding-top: 80px;
+        }
+
+        .hero-container {
           max-width: 1100px;
           margin: 0 auto;
           width: 100%;
-          display: grid;
-          grid-template-columns: 1fr; 
-          gap: 3rem;
+          display: flex;
+          flex-direction: column-reverse; /* Mobile: Image first */
+          gap: 2.5rem;
           align-items: center;
-          text-align: center; 
+          text-align: center; /* Mobile: Center text */
         }
 
         @media (min-width: 1024px) {
-          .container-hero {
-            grid-template-columns: 1.2fr 0.8fr; 
-            text-align: left;
+          .hero-container {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            text-align: left; /* Laptop: Left align */
+            gap: 4rem;
           }
-          .avatar-container { order: 2; } 
-          .hero-content { order: 1; }
+          .hero-content-area { order: 1; }
+          .hero-image-area { order: 2; }
         }
 
-        .avatar-container {
-          position: relative;
-          display: flex;
-          justify-content: center;
-          margin-bottom: 2rem;
+        .hero-main-title {
+          font-family: 'Syne, sans-serif';
+          font-size: clamp(2.5rem, 6vw, 4.5rem); /* Font size reduced slightly */
+          font-weight: 800; letter-spacing: -0.04em;
+          line-height: 1.1; margin-bottom: 0.5rem;
         }
 
-        .spinning-ring {
-          width: clamp(220px, 40vw, 320px);
-          height: clamp(220px, 40vw, 320px);
-          border-radius: 50%;
-          background: linear-gradient(135deg, #38bdf8, #6366f1);
-          padding: 3px;
-          position: relative;
+        .hero-typewriter {
+          font-family: 'Syne, sans-serif';
+          font-size: clamp(1rem, 2vw, 1.4rem);
+          font-weight: 600; color: #94a3b8;
+          height: 2rem; display: flex; align-items: center; gap: 8px;
+          margin-bottom: 1.5rem; justify-content: center;
+        }
+        @media (min-width: 1024px) { .hero-typewriter { justify-content: flex-start; } }
+
+        .type-cursor {
+          display: inline-block; width: 2px; height: 1.2em;
+          background: #38bdf8; animation: blink 1s step-end infinite;
         }
 
-        .ring-inner-bg {
-          position: absolute;
-          inset: 6px;
-          border-radius: 50%;
-          background: #0f172a; /*website bacnground color*/
-          z-index: 0;
+        .hero-para {
+          font-size: 1rem; color: #94a3b8;
+          max-width: 500px; line-height: 1.6; margin-bottom: 2rem;
+          margin-left: auto; margin-right: auto;
+        }
+        @media (min-width: 1024px) { .hero-para { margin-left: 0; } }
+
+        .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2rem; }
+        @media (min-width: 1024px) { .hero-btns { justify-content: flex-start; } }
+
+        .hero-btn-primary {
+          padding: 0.7rem 1.5rem; background: linear-gradient(135deg, #38bdf8, #6366f1);
+          color: #fff; border-radius: 999px; font-weight: 500; text-decoration: none; font-size: 0.85rem;
+        }
+        .hero-btn-secondary {
+          padding: 0.7rem 1.5rem; border: 1px solid rgba(255,255,255,0.1);
+          border-radius: 999px; color: #fff; text-decoration: none; font-size: 0.85rem;
         }
 
-        .image-wrapper {
-          position: absolute;
-          inset: 6px;
-          border-radius: 50%;
-          overflow: hidden;
-          z-index: 1;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: #1e293b;
+        .hero-social-group { 
+          display: flex; 
+          gap: 0.75rem; 
+          justify-content: center; /* Mobile: Center icons */
         }
+        @media (min-width: 1024px) { .hero-social-group { justify-content: flex-start; } }
 
-        .image-wrapper img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
+        .hero-social-link {
+          width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.1);
+          display: flex; align-items: center; justify-content: center; color: #94a3b8;
+          transition: 0.3s;
         }
+        .hero-social-link:hover { border-color: #38bdf8; color: #38bdf8; }
 
-        .float-badge {
-          position: absolute;
-          background: rgba(30, 41, 59, 0.8);
-          backdrop-filter: blur(12px);
-          border: 1px solid rgba(255,255,255,0.1);
-          border-radius: 12px;
-          padding: 6px 12px;
-          font-size: 0.75rem;
-          font-weight: 500;
-          white-space: nowrap;
-          z-index: 2;
+        /* Avatar Box - Width/Height slightly reduced as requested */
+        .hero-image-area { position: relative; }
+        .avatar-frame {
+          width: clamp(220px, 40vw, 270px); height: clamp(220px, 40vw, 270px);
+          border-radius: 50%; background: linear-gradient(135deg, #38bdf8, #6366f1);
+          padding: 3px; position: relative;
         }
-
-        .float-badge.top { top: 0; right: 0; animation: float 4s ease-in-out infinite; }
-        .float-badge.bottom { bottom: 0; left: 0; animation: float 4s ease-in-out -2s infinite; }
-
-        .hero-title {
-          font-family: 'Syne', sans-serif;
-          fontSize: clamp(2.5rem, 6vw, 5rem);
-          font-weight: 800;
-          line-height: 1.1;
-          margin-bottom: 1rem;
+        .avatar-inner-bg { position: absolute; inset: 5px; border-radius: 50%; background: #0f172a; }
+        .avatar-img-box {
+          position: absolute; inset: 5px; border-radius: 50%; overflow: hidden;
+          display: flex; align-items: center; justify-content: center;
         }
+        .avatar-img-box img { width: 100%; height: 100%; object-fit: cover; }
 
-        .hero-desc {
-          font-size: 1rem;
-          color: #94a3b8;
-          max-width: 520px;
-          margin: 0 auto 2rem;
-          line-height: 1.6;
+        .hero-badge-float {
+          position: absolute; background: rgba(30, 41, 59, 0.8); border: 1px solid rgba(255,255,255,0.1);
+          border-radius: 10px; padding: 6px 12px; font-size: 0.7rem; color: #fff;
+          white-space: nowrap; backdrop-filter: blur(8px);
         }
-
-        @media (min-width: 1024px) {
-          .hero-desc { margin: 0 0 2.5rem 0; }
-        }
-
-        /* Utils */
-        .badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(56,189,248,0.1); border: 1px solid rgba(56,189,248,0.2); border-radius: 99px; padding: 5px 14px; font-size: 0.75rem; color: #38bdf8; margin-bottom: 1.5rem; }
-        .dot { width: 6px; height: 6px; border-radius: 50%; background: #38bdf8; animation: pulse-dot 2s infinite; }
-        .typewriter-container { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: clamp(1rem, 2vw, 1.5rem); font-weight: 600; color: #94a3b8; margin-bottom: 1.5rem; min-height: 1.6em; }
-        @media (min-width: 1024px) { .typewriter-container { justify-content: flex-start; } }
-        .cursor { display: inline-block; width: 2px; height: 1.2em; background: #38bdf8; animation: blink 1s step-end infinite; }
-        .cta-group { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2rem; }
-        @media (min-width: 1024px) { .cta-group { justify-content: flex-start; } }
-        .social-group { display: flex; gap: 1rem; justify-content: center; }
-        @media (min-width: 1024px) { .social-group { justify-content: flex-start; } }
-        
-        .btn-primary { padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #38bdf8, #6366f1); color: white; border-radius: 99px; text-decoration: none; font-weight: 500; transition: 0.3s; }
-        .btn-secondary { padding: 0.75rem 1.5rem; border: 1px solid #334155; color: white; border-radius: 99px; text-decoration: none; transition: 0.3s; }
-        .social-link { width: 40px; height: 40px; border: 1px solid #334155; border-radius: 50%; display: flex; items-center: center; justify-content: center; color: #94a3b8; text-decoration: none; transition: 0.3s; }
-        .social-link:hover { border-color: #38bdf8; color: #38bdf8; transform: translateY(-3px); }
+        .badge-top { top: -5px; right: -5px; animation: float 4s ease-in-out infinite; }
+        .badge-bottom { bottom: 5px; left: -15px; animation: float 4s ease-in-out -2s infinite; }
 
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-        @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
-        @keyframes pulse-dot { 0%,100%{transform:scale(1); opacity:1} 50%{transform:scale(1.5); opacity:0.5} }
+        @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+        @keyframes pulse-dot { 0%,100%{transform:scale(1); opacity:1} 50%{transform:scale(1.4); opacity:0.5} }
       `}</style>
     </section>
   );
