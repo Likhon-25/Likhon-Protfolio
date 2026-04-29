@@ -178,6 +178,54 @@ export default function Hero() {
             >
               Get In Touch
             </a>
+
+            {/* ── Download Resume ── */}
+            <a
+              href="/resume.pdf"
+              download="Likhon_Mondol_Resume.pdf"
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: 8,
+                padding: '0.75rem 1.75rem',
+                background: 'transparent',
+                color: 'var(--text)',
+                border: '1px solid rgba(99,102,241,0.4)',
+                borderRadius: 999,
+                fontWeight: 500, fontSize: '0.9rem', cursor: 'pointer',
+                textDecoration: 'none',
+                transition: 'all 0.3s ease',
+                backdropFilter: 'blur(10px)',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.background = 'rgba(99,102,241,0.1)'
+                e.currentTarget.style.borderColor = '#6366f1'
+                e.currentTarget.style.color = '#818cf8'
+                e.currentTarget.style.transform = 'translateY(-2px)'
+                e.currentTarget.style.boxShadow = '0 8px 25px rgba(99,102,241,0.2)'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.background = 'transparent'
+                e.currentTarget.style.borderColor = 'rgba(99,102,241,0.4)'
+                e.currentTarget.style.color = 'var(--text)'
+                e.currentTarget.style.transform = 'none'
+                e.currentTarget.style.boxShadow = 'none'
+              }}
+            >
+              {/* Download SVG icon */}
+              <svg
+                width="15" height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              Resume
+            </a>
           </motion.div>
 
           {/* Socials */}
