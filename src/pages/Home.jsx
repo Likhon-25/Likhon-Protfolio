@@ -1,5 +1,6 @@
-import Hero from '../components/Hero'
-import { About, Skills, Projects, Contact } from '../components/Sections'
+import Hero from "../components/Hero";
+import { About, Skills, Projects } from "../components/Sections";
+import { Contact } from "../components/Contact";
 
 export default function Home() {
   return (
@@ -10,5 +11,5 @@ export default function Home() {
       <Projects />
       <Contact />
     </>
-  )
+  );
 }
