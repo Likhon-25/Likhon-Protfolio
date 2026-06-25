@@ -215,17 +215,7 @@ export function Contact() {
         >
           Get In Touch
         </h2>
-        <p
-          style={{
-            fontSize: "1.0625rem",
-            color: "var(--text-muted)",
-            maxWidth: 540,
-            lineHeight: 1.7,
-          }}
-        >
-          একটা project আছে? Collaborate করতে চাও? Message করো — সরাসরি আমার
-          Gmail এ চলে আসবে। ✉️
-        </p>
+        
       </motion.div>
 
       {/* Grid */}
@@ -306,40 +296,7 @@ export function Contact() {
             </a>
           ))}
 
-          {/* Info card */}
-          <div
-            style={{
-              background: "rgba(56,189,248,0.05)",
-              border: "1px solid rgba(56,189,248,0.15)",
-              borderRadius: 12,
-              padding: "1rem 1.25rem",
-              marginTop: 8,
-            }}
-          >
-            <div
-              style={{
-                fontSize: "0.8rem",
-                color: "#38bdf8",
-                fontWeight: 600,
-                marginBottom: 4,
-              }}
-            >
-              📬 Direct to Gmail
-            </div>
-            <div
-              style={{
-                fontSize: "0.78rem",
-                color: "var(--text-dim)",
-                lineHeight: 1.6,
-              }}
-            >
-              Form submit করলে message সরাসরি{" "}
-              <span style={{ color: "var(--text-muted)" }}>
-                likhonmondol327@gmail.com
-              </span>{" "}
-              এ চলে যাবে।
-            </div>
-          </div>
+          
         </motion.div>
 
         {/* ── Right: form ── */}
