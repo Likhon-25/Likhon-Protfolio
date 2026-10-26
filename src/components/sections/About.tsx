@@ -5,7 +5,7 @@ import { about } from "@/data/portfolio";
 
 /**
  * ABOUT — 01
- * বাম দিকে story, ডান দিকে quick facts, নিচে ৩টা strength card.
+ * বাম দিকে story, ডান দিকে quick facts, নিচে specialization cards.
  * Content edit: src/data/portfolio.ts → about
  */
 export default function About() {
@@ -93,8 +93,11 @@ export default function About() {
         </Reveal>
       </div>
 
-      {/* ── Strengths ── */}
-      <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+      {/* ── Core areas of specialization ── */}
+      <div className="mt-8">
+        <p className="eyebrow">// Core areas of specialization</p>
+      </div>
+      <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
         {about.pillars.map((pillar, index) => (
           <Reveal key={pillar.title} delay={0.08 * index} className="h-full">
             <article className="card group h-full p-5 sm:p-6">

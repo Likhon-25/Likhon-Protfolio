@@ -76,6 +76,17 @@ All copy lives in one file: **`src/data/portfolio.ts`**
 Icons are referenced by key from `src/components/ui/Icon.tsx` — add an icon
 there first if you need a new one.
 
+### Adding a project
+
+1. Put a preview image in `public/images/projects/` (16:10 works best, e.g.
+   1200×750).
+2. Copy one object inside the `projects` array in `src/data/portfolio.ts`,
+   give it a unique `id`, and point `image` at `/images/projects/<file>`.
+3. If the card needs a new filter pill, add it to `projectFilters`.
+
+The card markup itself lives in `src/components/sections/Projects.tsx`
+(`ProjectCard`).
+
 ---
 
 ## Project structure

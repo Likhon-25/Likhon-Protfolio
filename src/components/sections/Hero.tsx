@@ -105,9 +105,9 @@ export default function Hero() {
               {...fadeUp(0.1)}
               className="mt-4 font-display text-[clamp(2.9rem,7.4vw,5.3rem)] font-semibold leading-[0.93] tracking-[-0.05em] text-main"
             >
-              Full-stack
+              MERN-stack
               <br />
-              <span className="text-gradient">engineer.</span>
+              <span className="text-gradient">developer.</span>
             </motion.h1>
 
             <motion.div
@@ -192,7 +192,7 @@ export default function Hero() {
         {/* ═══════════════ Stats ═══════════════ */}
         <motion.div
           {...fadeUp(0.4)}
-          className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line/10 bg-line/10 sm:mt-16 sm:grid-cols-4"
+          className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line/10 bg-line/10 sm:mt-16 sm:grid-cols-3"
         >
           {stats.map((stat) => (
             <div
@@ -289,7 +289,7 @@ function Portrait({ reduceMotion }: { reduceMotion: boolean }) {
       </div>
 
       {/* Floating card — education */}
-      <div className="absolute -right-4 bottom-[18%] hidden animate-float items-center gap-2.5 rounded-xl border border-line/15 bg-page/85 px-3 py-2.5 shadow-xl shadow-black/20 backdrop-blur-md [animation-delay:-2.5s] sm:flex lg:-right-8">
+      {/* <div className="absolute -right-4 bottom-[18%] hidden animate-float items-center gap-2.5 rounded-xl border border-line/15 bg-page/85 px-3 py-2.5 shadow-xl shadow-black/20 backdrop-blur-md [animation-delay:-2.5s] sm:flex lg:-right-8">
         <span className="grid h-8 w-8 place-items-center rounded-lg bg-amber-400/10 text-amber-300">
           <Icon name="graduation" className="h-4 w-4" />
         </span>
@@ -297,7 +297,7 @@ function Portrait({ reduceMotion }: { reduceMotion: boolean }) {
           <p className="text-[11px] font-semibold text-main">6th semester</p>
           <p className="font-mono text-[9px] text-dim">CST · RIIT</p>
         </div>
-      </div>
+      </div> */}
     </motion.div>
   );
 }

@@ -21,7 +21,7 @@ export const site = {
   name: "Likhon Mondol",
   firstName: "Likhon",
   initials: "LM",
-  role: "Full-Stack Engineer",
+  role: "Full-Stack Developer",
   tagline: "I build complete web products — from interface to database.",
   availability: "Open to internships & junior roles",
   email: "likhonmondol327@gmail.com",
@@ -85,7 +85,7 @@ export const socials: SocialLink[] = [
 export const hero = {
   greeting: "Hey, I'm",
   intro:
-    "I'm a full-stack developer who enjoys turning ideas into complete web products — thoughtful React interfaces, dependable Node.js APIs, and data models that stay clean as things grow. Currently in my 6th semester of Computer Science & Technology.",
+    "I’m a passionate Full-Stack Developer who enjoys building modern, responsive, and user-friendly web applications. I love turning ideas into real-world digital experiences using modern web technologies.",
   typewriterWords: ["web apps.", "REST APIs.", "clean UIs.", "real products."],
   stack: [
     "React",
@@ -100,31 +100,28 @@ export const hero = {
 }
 
 export const stats = [
-  { value: "03+", label: "Projects shipped" },
-  { value: "06", label: "Semester · CST" },
-  { value: "12+", label: "Tools & technologies" },
-  { value: "100%", label: "Self-driven learning" },
+  { value: "03", label: "Projects in portfolio" },
+  { value: "04", label: "Skill areas" },
+  { value: "AI", label: "VS Code-assisted workflow" },
 ]
 
 /* ── 6. ABOUT SECTION ───────────────────────────────────────────────── */
 export const about = {
   kicker: "About me",
-  title: "A developer who cares about the whole picture.",
+  title: "AI-Driven MERN Stack Developer",
   description:
-    "I like the part most people skip: understanding how the interface, the API, and the database actually fit together.",
+    "I am a passionate AI-Driven MERN Stack Developer dedicated to transforming ideas into clean, reliable, and high-performance digital products.",
   paragraphs: [
-    "I'm Likhon Mondol, a Computer Science & Technology student and full-stack web developer from Rangpur, Bangladesh. I enjoy the entire build — from sketching an interface to designing the API and data model behind it.",
-    "My core stack is the MERN ecosystem with TypeScript and Next.js. I care about clean architecture, accessible UI, and the small details that make a product feel effortless to use.",
-    "Right now I'm in my 6th semester of diploma, sharpening both sides of my skill set through real projects: front-end craft and back-end reliability.",
+    "My work centers on the intersection of robust backend engineering and deliberate, highly refined user interfaces. With hands-on expertise in MongoDB Atlas, Mongoose ODM, Express.js modular patterns, React, Node.js, and TypeScript—alongside Next.js App Router, BetterAuth security, and Stripe integrations—I build applications where structure, security, and performance operate in sync.",
+    "I prioritize maintainable codebases, thoughtful typography, and seamless interactivity. Incorporating modern agentic workflows (Cursor AI, Antigravity, Claude Code), every interface is engineered to scale smoothly and deliver exceptional user experiences.",
   ],
-  quote:
-    "Good software isn't just code that runs. It's code someone else can understand, extend, and trust.",
+  quote: "Structure, security, and performance operate in sync.",
   facts: [
     { icon: "pin" as IconName, label: "Location", value: site.location },
     {
       icon: "graduation" as IconName,
       label: "Education",
-      value: `${academics.diploma.shortDegree} · ${academics.diploma.semester}`,
+      value: `${academics.diploma.shortDegree}`,
     },
     {
       icon: "building" as IconName,
@@ -145,24 +142,31 @@ export const about = {
   pillars: [
     {
       icon: "code" as IconName,
-      title: "Front-end craft",
+      title: "MERN Web Apps",
       description:
-        "Responsive, accessible interfaces built with React, Next.js, and Tailwind CSS — designed to feel fast on every screen.",
-      tag: "UI / UX",
+        "Production-quality full-stack architectures with modular API routes, resilient MongoDB data persistence, and reactive React frontends.",
+      tag: "MERN",
     },
     {
-      icon: "server" as IconName,
-      title: "Back-end thinking",
+      icon: "layers" as IconName,
+      title: "Next.js Engineering",
       description:
-        "REST APIs, authentication, and data models built with Node.js, Express, and MongoDB — predictable and easy to extend.",
-      tag: "API / DATA",
+        "Server-side rendering, Server Components, caching & ISR, optimized layouts, and lightning-fast bundle delivery.",
+      tag: "NEXT.JS",
     },
     {
-      icon: "bulb" as IconName,
-      title: "Product mindset",
+      icon: "sparkles" as IconName,
+      title: "AI-Driven Workflows",
       description:
-        "I ask why before how, test the edge cases, and ship things that actually work for the person using them.",
-      tag: "SHIP / LEARN",
+        "Agentic development with Cursor, Antigravity, Claude Code, and local LLM integration with Ollama for rapid full-stack delivery.",
+      tag: "AI TOOLS",
+    },
+    {
+      icon: "monitor" as IconName,
+      title: "Editorial Aesthetics",
+      description:
+        "Crafting memorable, cinematic visual identities without reliance on generic templates or gratuitous gradients.",
+      tag: "UI DESIGN",
     },
   ],
 }
@@ -351,6 +355,8 @@ export type Project = {
   domain: string
   accent: ProjectAccent
   featured?: boolean
+  /* Card-এর উপরের preview image — ফাইলটা public/images/projects/ এ রাখো */
+  image: string
 }
 
 export const projectsSection = {
@@ -360,56 +366,68 @@ export const projectsSection = {
     "A small, honest collection of work that shows how I think about interfaces, state, and user experience.",
 }
 
+/* নতুন project add করতে: নিচের যেকোনো একটা block কপি করে বসাও।
+   `image`-এ public/images/projects/ এর ভেতরের ফাইল path দাও। */
 export const projects: Project[] = [
   {
-    id: "modern-hearth",
-    icon: "utensils",
-    title: "Modern Hearth Restaurant",
-    tagline:
-      "A premium restaurant experience, from the first scroll to the last dish.",
+    id: "Bazar-Dor",
+    icon: "wallet",
+    title: "Bazar Dor (বাজার দর)",
+    tagline: "Daily Commodity Price Tracker & Market Analytics",
     description:
-      "A fully responsive restaurant website built around a warm visual identity, smooth motion, and a menu-first layout. Designed to make a local restaurant feel premium on every screen size.",
-    techs: ["React", "Tailwind CSS", "Framer Motion"],
-    tags: ["react", "tailwind"],
-    live: "https://modern-hearth-resturent.vercel.app/",
-    github: "https://github.com/Likhon-25/Modern-Hearth-Resturent",
-    domain: "modern-hearth-resturent.vercel.app",
+      "A specialized Bengali web platform that tracks daily grocery and essential commodity market rates (চাল, ডাল, তেল, সবজি, মাছ, মাংস). Provides transparent market analytics, price change indicators with percentage tags (আজ দাম বেড়েছে/কমেছে), and itemized search to empower consumers.",
+    techs: [
+      "Next.js",
+      "TypeScript",
+      "State Management",
+      "Tailwind CSS",
+      "DaisyUI",
+    ],
+    tags: ["nextjs", "typescript", "tailwind"],
+    live: "https://a7-bazar-dor-eight.vercel.app/",
+    github: "https://github.com/Likhon-25/Bazar_Dor",
+    domain: "https://github.com/Likhon-25/Bazar_Dor",
+    accent: "cyan",
+    image: "/images/projects/Project-2.png",
+  },
+  {
+    id: "bangla-news-24",
+    icon: "book",
+    title: "Bangla News 24",
+    tagline: "Real-Time Digital Journalism & News Aggregator",
+    description:
+      "A modern digital journalism portal engineered for rapid content delivery and breaking news reporting. Powered by Next.js, featuring live breaking news tickers (সর্বশেষ সংবাদ), dynamic multi-category routing (রাজনীতি, বিশ্ব, অর্থনীতি, প্রযুক্তি), top-read rankings, and responsive Bengali typography.",
+    techs: ["Next.js","React", "JavaScript", "Tailwind CSS", "REST API"],
+    tags: ["nextjs", "javascript", "tailwind"],
+    live: "https://bangla-news-24-phi.vercel.app/",
+    github: "https://github.com/Likhon-25/bangla-news-24",
+    domain: "https://github.com/Likhon-25/bangla-news-24",
+    accent: "violet",
+    image: "/images/projects/Project-1.png",
+  },
+    {
+    id: "fit-log",
+    icon: "utensils",
+    title: "FITLOG",
+    tagline:
+      "Minimalist Workout Companion & Routine Planner",
+    description:
+      "A dark-themed gym companion and workout planner designed for athletes and lifters. Features an illustrated exercise library covering 12 major lifts, custom routine building, and interactive workout set tracking.",
+    techs: ["React","Javascript(ES6+)", "Tailwind CSS"],
+    tags: ["javascript", "tailwind"],
+    live: "https://fitlog-blond.vercel.app/",
+    github: "https://github.com/Likhon-25/FITLOG",
+    domain: "https://github.com/Likhon-25/FITLOG",
     accent: "amber",
     featured: true,
-  },
-  {
-    id: "payoo",
-    icon: "wallet",
-    title: "Payoo Mobile Banking",
-    tagline: "A mobile banking dashboard with real transaction flows.",
-    description:
-      "A client-side banking simulation with balance tracking, fund transfers, transaction history, and a clean dashboard. Built in vanilla JavaScript to strengthen state management and DOM skills without a framework.",
-    techs: ["JavaScript", "Tailwind CSS", "DaisyUI"],
-    tags: ["javascript", "tailwind"],
-    live: "https://likhon-25.github.io/Payoo-Mobile-Bank/",
-    github: "https://github.com/Likhon-25/Payoo-Mobile-Bank",
-    domain: "likhon-25.github.io/Payoo-Mobile-Bank",
-    accent: "cyan",
-  },
-  {
-    id: "english-window",
-    icon: "book",
-    title: "English Window",
-    tagline: "A vocabulary app that makes practice feel like play.",
-    description:
-      "An interactive English learning platform with flashcards, categorised word banks, and lightweight game mechanics. Focused on a distraction-free learning flow and a mobile-first interface.",
-    techs: ["JavaScript ES6", "Tailwind CSS", "DaisyUI"],
-    tags: ["javascript", "tailwind"],
-    live: "https://likhon-25.github.io/English_Janala_App/",
-    github: "https://github.com/Likhon-25/English_Janala_App",
-    domain: "likhon-25.github.io/English_Janala_App",
-    accent: "violet",
+    image: "/images/projects/fitlog.png",
   },
 ]
 
 export const projectFilters = [
   { label: "All", value: "all" },
-  { label: "React", value: "react" },
+  { label: "Next.js", value: "nextjs" },
+  { label: "TypeScript", value: "typescript" },
   { label: "JavaScript", value: "javascript" },
   { label: "Tailwind CSS", value: "tailwind" },
 ]
@@ -458,12 +476,12 @@ export const footer = {
 }
 
 export const seo = {
-  title: "Likhon Mondol — Full-Stack Engineer",
+  title: "Likhon Mondol — Full-Stack Developer",
   description:
-    "Likhon Mondol is a full-stack engineer from Rangpur, Bangladesh, building modern web applications with React, Next.js, TypeScript, Node.js, and MongoDB.",
+    "Likhon Mondol is a full-stack developer from Rangpur, Bangladesh, building modern web applications with React, Next.js, TypeScript, Node.js, and MongoDB.",
   keywords: [
     "Likhon Mondol",
-    "Full-Stack Engineer",
+    "Full-Stack Developer",
     "MERN Stack Developer",
     "React Developer",
     "Next.js Developer",
