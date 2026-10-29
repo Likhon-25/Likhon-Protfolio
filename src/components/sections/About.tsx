@@ -1,12 +1,12 @@
 import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { about } from "@/data/portfolio";
+import { about } from "@/data/about";
 
 /**
  * ABOUT — 01
  * বাম দিকে story, ডান দিকে quick facts, নিচে specialization cards.
- * Content edit: src/data/portfolio.ts → about
+ * Content edit: src/data/about.ts → about
  */
 export default function About() {
   const pillarStyles: Record<string, string> = {

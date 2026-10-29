@@ -6,7 +6,8 @@ import ScrollProgress from "@/components/effects/ScrollProgress";
 import BackToTop from "@/components/layout/BackToTop";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
-import { seo, site } from "@/data/portfolio";
+import { seo } from "@/data/seo";
+import { site } from "@/data/site";
 
 import "./globals.css";
 

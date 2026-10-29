@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 
-import { seo, site } from "@/data/portfolio";
+import { seo } from "@/data/seo";
+import { site } from "@/data/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {

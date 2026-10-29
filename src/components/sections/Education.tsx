@@ -1,12 +1,12 @@
 import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { education, type EducationItem } from "@/data/portfolio";
+import { education, type EducationItem } from "@/data/education";
 
 /**
  * EDUCATION — 02
  * Timeline of academic history on the left, "always in beta" panel on the right.
- * Content edit: src/data/portfolio.ts → education
+ * Content edit: src/data/education.ts → education
  */
 export default function Education() {
   return (

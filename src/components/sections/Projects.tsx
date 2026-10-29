@@ -12,7 +12,7 @@ import {
   projectsSection,
   type Project,
   type ProjectAccent,
-} from "@/data/portfolio";
+} from "@/data/projects";
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
@@ -46,7 +46,7 @@ const accentStyles: Record<
  * PROJECTS — 04
  * Filterable project grid. Filters come from `projectFilters`,
  * tags on each project decide which filter it belongs to.
- * Content edit: src/data/portfolio.ts → projects / projectFilters
+ * Content edit: src/data/projects.ts → projects / projectFilters
  */
 export default function Projects() {
   const [filter, setFilter] = useState("all");

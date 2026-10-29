@@ -4,7 +4,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import ThemeToggle from "@/components/theme/ThemeToggle";
 import Icon from "@/components/ui/Icon";
-import { navItems, site, socials } from "@/data/portfolio";
+import { navItems } from "@/data/navigation";
+import { site } from "@/data/site";
+import { socials } from "@/data/socials";
 
 /**
  * NAVBAR

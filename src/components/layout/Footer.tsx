@@ -1,10 +1,13 @@
 import Icon from "@/components/ui/Icon";
-import { footer, navItems, site, socials } from "@/data/portfolio";
+import { footer } from "@/data/footer";
+import { navItems } from "@/data/navigation";
+import { site } from "@/data/site";
+import { socials } from "@/data/socials";
 
 /**
  * FOOTER
  * Identity + quick nav + socials on top, legal line at the bottom.
- * Content edit: src/data/portfolio.ts → footer / site / navItems / socials
+ * Content edit: src/data/footer.ts, src/data/site.ts, src/data/navigation.ts, or src/data/socials.ts
  */
 export default function Footer() {
   const year = new Date().getFullYear();

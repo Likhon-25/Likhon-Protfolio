@@ -4,7 +4,9 @@ import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Icon from "@/components/ui/Icon";
-import { hero, site, socials, stats } from "@/data/portfolio";
+import { hero } from "@/data/hero";
+import { site } from "@/data/site";
+import { socials } from "@/data/socials";
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
@@ -80,21 +82,9 @@ export default function Hero() {
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
           {/* ═══════════════ Left: content ═══════════════ */}
           <div>
-            <motion.a
-              href="#contact"
-              {...fadeUp(0)}
-              className="inline-flex items-center gap-2 rounded-full border border-accent3/25 bg-accent3/10 px-3.5 py-1.5 font-mono text-[10.5px] uppercase tracking-[0.16em] text-accent3 transition hover:bg-accent3/15"
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent3 opacity-60" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent3" />
-              </span>
-              {site.availability}
-            </motion.a>
-
             <motion.p
-              {...fadeUp(0.06)}
-              className="mt-7 font-mono text-[11px] uppercase tracking-[0.24em] text-dim"
+              {...fadeUp(0)}
+              className="font-mono text-[11px] uppercase tracking-[0.24em] text-dim"
             >
               {hero.greeting}{" "}
               <span className="text-main">{site.name}</span>
@@ -189,25 +179,6 @@ export default function Hero() {
           <Portrait reduceMotion={Boolean(reduceMotion)} />
         </div>
 
-        {/* ═══════════════ Stats ═══════════════ */}
-        <motion.div
-          {...fadeUp(0.4)}
-          className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line/10 bg-line/10 sm:mt-16 sm:grid-cols-3"
-        >
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="bg-page/85 px-5 py-5 backdrop-blur sm:px-6 sm:py-6"
-            >
-              <div className="text-gradient font-display text-2xl font-semibold tracking-tight sm:text-3xl">
-                {stat.value}
-              </div>
-              <div className="mt-1.5 text-[10.5px] font-medium uppercase tracking-[0.14em] text-dim">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </motion.div>
       </div>
     </section>
   );
@@ -277,9 +248,20 @@ function Portrait({ reduceMotion }: { reduceMotion: boolean }) {
         </div>
       </div>
 
-      {/* Floating card — clean code */}
+      {/* Floating card — AI powered */}
       <div className="absolute -left-4 top-[22%] hidden animate-float items-center gap-2.5 rounded-xl border border-line/15 bg-page/85 px-3 py-2.5 shadow-xl shadow-black/20 backdrop-blur-md sm:flex lg:-left-8">
         <span className="grid h-8 w-8 place-items-center rounded-lg bg-cyan-400/10 text-cyan-300">
+          <Icon name="sparkles" className="h-4 w-4" />
+        </span>
+        <div>
+          <p className="text-[11px] font-semibold text-main">AI Powered</p>
+          <p className="font-mono text-[9px] text-dim">build smarter</p>
+        </div>
+      </div>
+
+      {/* Floating card — clean code */}
+      <div className="absolute -right-4 bottom-[18%] hidden animate-float items-center gap-2.5 rounded-xl border border-line/15 bg-page/85 px-3 py-2.5 shadow-xl shadow-black/20 backdrop-blur-md [animation-delay:-2.5s] sm:flex lg:-right-8">
+        <span className="grid h-8 w-8 place-items-center rounded-lg bg-violet-400/10 text-violet-300">
           <Icon name="code" className="h-4 w-4" />
         </span>
         <div>
@@ -287,17 +269,6 @@ function Portrait({ reduceMotion }: { reduceMotion: boolean }) {
           <p className="font-mono text-[9px] text-dim">front → back</p>
         </div>
       </div>
-
-      {/* Floating card — education */}
-      {/* <div className="absolute -right-4 bottom-[18%] hidden animate-float items-center gap-2.5 rounded-xl border border-line/15 bg-page/85 px-3 py-2.5 shadow-xl shadow-black/20 backdrop-blur-md [animation-delay:-2.5s] sm:flex lg:-right-8">
-        <span className="grid h-8 w-8 place-items-center rounded-lg bg-amber-400/10 text-amber-300">
-          <Icon name="graduation" className="h-4 w-4" />
-        </span>
-        <div>
-          <p className="text-[11px] font-semibold text-main">6th semester</p>
-          <p className="font-mono text-[9px] text-dim">CST · RIIT</p>
-        </div>
-      </div> */}
     </motion.div>
   );
 }

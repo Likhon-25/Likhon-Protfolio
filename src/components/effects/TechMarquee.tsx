@@ -1,4 +1,4 @@
-import { hero } from "@/data/portfolio";
+import { hero } from "@/data/hero";
 
 /** Hero-র নিচে চলমান tech stack strip. */
 export default function TechMarquee() {

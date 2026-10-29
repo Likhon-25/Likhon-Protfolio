@@ -6,7 +6,8 @@ import { useRef, useState } from "react";
 import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { contact, site } from "@/data/portfolio";
+import { contact } from "@/data/contact";
+import { site } from "@/data/site";
 
 /* ── EmailJS credentials ──────────────────────────────────────────────
    The public key is safe to ship in the browser. Override per
